@@ -23,36 +23,37 @@
             $data = sparql_get(
             "http://localhost:3030/lapbook",
             "
-            PREFIX id: <https://lapbook.com/>
-            PREFIX item: <https://lapbook.com/ns/item#>
-            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                PREFIX id: <https://lapbook.com/>
+                PREFIX item: <https://lapbook.com/ns/item#>
+                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-            SELECT ?NamaProduk ?Processor ?RAM ?Storage ?GPU ?Harga ?Type ?OS ?Brand ?TahunRilis
-            WHERE
-            { 
-                ?items
-                    item:NamaProduk     ?NamaProduk ;
-                    item:Processor      ?Processor ;
-                    item:RAM            ?RAM ;
-                    item:Storage        ?Storage ;
-                    item:GPU            ?GPU ;
-                    item:Harga          ?Harga ;
-                    item:Type           ?Type ;
-                    item:OS             ?OS ;
-                    item:Brand          ?Brand ;
-                    item:TahunRilis     ?TahunRilis .
-                    FILTER 
-                    (regex (?NamaProduk, '$test', 'i') 
-                    || regex (?Processor, '$test', 'i') 
-                    || regex (?RAM, '$test', 'i') 
-                    || regex (?Storage, '$test', 'i') 
-                    || regex (?GPU, '$test', 'i') 
-                    || regex (?Harga, '$test', 'i') 
-                    || regex (?Type, '$test', 'i') 
-                    || regex (?OS, '$test', 'i') 
-                    || regex (?Brand, '$test', 'i') 
-                    || regex (?TahunRilis, '$test', 'i'))
-                    }"
+                SELECT ?NamaProduk ?Processor ?RAM ?Storage ?GPU ?Harga ?Type ?OS ?Brand ?TahunRilis
+                WHERE
+                { 
+                    ?items
+                        item:NamaProduk     ?NamaProduk ;
+                        item:Processor      ?Processor ;
+                        item:RAM            ?RAM ;
+                        item:Storage        ?Storage ;
+                        item:GPU            ?GPU ;
+                        item:Harga          ?Harga ;
+                        item:Type           ?Type ;
+                        item:OS             ?OS ;
+                        item:Brand          ?Brand ;
+                        item:TahunRilis     ?TahunRilis .
+                        FILTER 
+                        (regex (?NamaProduk, '$test', 'i') 
+                        || regex (?Processor, '$test', 'i') 
+                        || regex (?RAM, '$test', 'i') 
+                        || regex (?Storage, '$test', 'i') 
+                        || regex (?GPU, '$test', 'i') 
+                        || regex (?Harga, '$test', 'i') 
+                        || regex (?Type, '$test', 'i') 
+                        || regex (?OS, '$test', 'i') 
+                        || regex (?Brand, '$test', 'i') 
+                        || regex (?TahunRilis, '$test', 'i'))
+                }
+            "
             );
         } else {
             $data = sparql_get(
@@ -96,7 +97,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 h5">
                     <li class="nav-item px-2">
-                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active text-white" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item px-2">
                         <a class="nav-link text-white" href="about.php">About</a>
@@ -110,9 +111,13 @@
         </div>
     </nav>
 
-    <div class="container container-fluid mt-3  ">
-        <i class="fa-solid fa-magnifying-glass"></i><span>Menampilkan hasil pencarian untuk "<?php echo $test; ?>"</span>
-        <table class="table table-bordered table-striped table-hover text-center">
+    <div class="container container-fluid mt-3">
+        <?php
+            if ($test != NULL) {
+                ?> <i class="fa-solid fa-magnifying-glass"></i><span>Menampilkan hasil pencarian untuk <b>"<?php echo $test; ?>"</b></span><?php
+            } 
+        ?>
+        <table class="table table-bordered table-striped table-hover text-center table-responsive">
             <thead class="table-dark">
                 <tr>
                     <th>No.</th>
@@ -131,8 +136,7 @@
             <tbody>
                 <?php $i = 0; ?>
                 <?php foreach ($data as $dat) : ?>
-                <tr>
-                    <td></td>
+                    <td><?= ++$i ?></td>
                     <td><?= $dat['NamaProduk'] ?></td>
                     <td><?= $dat['Type'] ?></td>
                     <td><?= $dat['Brand'] ?></td>

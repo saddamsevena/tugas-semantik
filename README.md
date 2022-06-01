@@ -1,8 +1,4 @@
-<h1 align="center"><a href="https://github.com/saddamsevena/tugas-semantik" target="_blank">Semantik</a></h1>
-
-<p align="center">
-
-</p>
+<h1 align="center"><a href="https://github.com/saddamsevena/tugas-semantik" target="_blank">Lapbook</a></h1>
 
 ## About Projects
 
@@ -11,6 +7,9 @@
 ### Built With
 
 * [Bootstrap](https://getbootstrap.com/)
+* [XAMPP](https://www.apachefriends.org/download.html)
+* [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/index.html)
+* [NGROK](https://ngrok.com/)
 
 ## Requirements
 
@@ -20,33 +19,29 @@
     <li>XAMPP</li>
     <li>PHP 7.3+</li>
     <li>Browser</li>
+    <li>Apache Jena Fuseki</li>
+    <li>NGROK</li>
 </ul>
 
 ## Installation
 
-1. Clone Project
+1. Prepare and install all Requirements
+2. Clone Project on XAMPP folder (../xampp/htdocs)
     ```sh 
-        git clone https://github.com/rellisapk/Lonedry
+        git clone https://github.com/saddamsevena/tugas-semantik
     ```
-2. Install Composer on Project Directories
+3. Run Apache Jena Fuseki on root folder
     ```sh 
-        composer install
+        fuseki-server
     ```
-3. Set up the .env file
+4. Run NGROK on port 3030
     ```
-        Change Database (DB_DATABASE) name to your local database in XAMPP
+        ngrok http 3030
     ```
-4. Run php artisan key:generate on terminal
+5. Add turtle file on `/src/sparql/data.ttl` to Apache Jena Fuseki on http://localhost:3030/
+6. Run the app
     ```sh 
-        php artisan key:generate
-    ```
-5. Run php artisan migrate on terminal
-    ```sh 
-        php artisan migrate
-    ```
-6. Run php artisan serve on terminal
-    ```sh 
-        php artisan serve
+        http://localhost/tugas-semantik/
     ```
 
 ## Author
@@ -54,8 +49,3 @@
 | NPM           | Name        |
 | ------------- |-------------|
 | 140810190017  | Saddam Habibi Utomo |
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-"# " 
