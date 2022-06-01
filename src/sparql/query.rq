@@ -1,0 +1,19 @@
+PREFIX id: <https://lapbook.com/>
+PREFIX item: <https://lapbook.com/ns/item#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?NamaProduk ?Processor ?RAM ?Storage ?GPU ?Harga ?Type ?OS ?Brand ?TahunRilis
+WHERE
+{ 
+    ?items
+        item:NamaProduk     ?NamaProduk ;
+        item:Processor      ?Processor ;
+        item:RAM            ?RAM ;
+        item:Storage        ?Storage ;
+        item:GPU            ?GPU ;
+        item:Harga          ?Harga ;
+        item:Type           ?Type ;
+        item:OS             ?OS ;
+        item:Brand          ?Brand ;
+        item:TahunRilis     ?TahunRilis .
+}

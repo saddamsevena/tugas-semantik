@@ -1,0 +1,244 @@
+@prefix id: <https://lapbook.com/> .
+@prefix item: <https://lapbook.com/ns/item#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+#Devices
+
+id:A001
+    item:NamaProduk     "Infinix INBook X1 | Core i3-1005G1" ;
+    item:Processor      "Intel Core i3 1005G1 1.2 GHz Dual Core" ;
+    item:RAM            "8 GB 3200 Mhz" ;
+    item:Storage        "256 GB SSD M.2" ;
+    item:GPU            "Intel UHD Graphics G1" ;
+    item:Harga          "RP 6.234.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Infinix" ;
+    item:TahunRilis     "2017" .
+
+id:A002
+    item:NamaProduk     "ThinkPad T410" ;
+    item:Processor      "Intel Core i5 520M 2.4 GHz Dual Core" ;
+    item:RAM            "4 GB DDR3" ;
+    item:Storage        "HDD 320 GB" ;
+    item:GPU            "Intel HD Graphics" ;
+    item:Harga          "Rp 2.700.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "Windows 7" ;
+    item:Brand          "Lenovo" ;
+    item:TahunRilis     "2009" .
+    
+id:A003
+    item:NamaProduk     "Legion 5" ;
+    item:Processor      "AMD Ryzen 7 4800H 2.9 GHz Octa Core" ;
+    item:RAM            "32 GB DDR4" ;
+    item:Storage        "1 TB SSD M.2" ;
+    item:GPU            "NVIDIA GeForce GTX 1650" ;
+    item:Harga          "Rp 15.999.000,-" ;
+    item:Type           "Laptop Gaming" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Lenovo" ;
+    item:TahunRilis     "2020" .
+
+id:A004
+    item:NamaProduk     "RedmiBook 15" ;
+    item:Processor      "Intel Core i3 Octa Core" ;
+    item:RAM            "8GB 3200 MHz DDR4" ;
+    item:Storage        "SSD 256 GB" ;
+    item:GPU            "Intel UHD Graphics" ;
+    item:Harga          "Rp 6.499.000,-" ;
+    item:Type           "Laptop 2 in 1" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Xiaomi" ;
+    item:TahunRilis     "2022" .
+
+id:A005
+    item:NamaProduk     "Realme Book" ;
+    item:Processor      "Intel Core i5 2.4 GHz Quad Core" ;
+    item:RAM            "8GB 4266 MHz LPDDR4" ;
+    item:Storage        "512 GB SSD M.2" ;
+    item:GPU            "Intel iris Xe Graphics" ;
+    item:Harga          "Rp 13.999.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Realme" ;
+    item:TahunRilis     "2022" .
+    
+id:A006
+    item:NamaProduk     "ThinkPad X220" ;
+    item:Processor      "Intel Core i5 2430M 2.4 GHz Dual Core" ;
+    item:RAM            "4 GB DDR3" ;
+    item:Storage        "320 GB HDD SATA" ;
+    item:GPU            "Intel Integrated Graphics" ;
+    item:Harga          "Rp 3.600.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "Windows 7" ;
+    item:Brand          "Lenovo" ;
+    item:TahunRilis     "2011" .
+
+id:A007
+    item:NamaProduk     "VivoBook A409MA-FHD421" ;
+    item:Processor      "Intel Celeron N4020 1.1 GHz Dual Core" ;
+    item:RAM            "4 GB 2400 MHz DDR4" ;
+    item:Storage        "256 GB SSD M.2" ;
+    item:GPU            "Intel UHD Graphics 600" ;
+    item:Harga          "Rp 6.599.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Asus" ;
+    item:TahunRilis     "2019" .
+
+id:A008
+    item:NamaProduk     "XPS 13-9370" ;
+    item:Processor      "Intel Core i7 8850U 1.8 GHz Quad Core" ;
+    item:RAM            "8 GB 1866 MHz DDR3" ;
+    item:Storage        "256 GB SSD" ;
+    item:GPU            "Intel UHD Graphics 620" ;
+    item:Harga          "Rp 20.000.000,-" ;
+    item:Type           "Laptop 2 in 1" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Dell" ;
+    item:TahunRilis     "2019" .
+    
+id:A009
+    item:NamaProduk     "BR1100FKA-BP0410T" ;
+    item:Processor      "Intel Celeron N4500 1.1 GHz Dual Core" ;
+    item:RAM            "4 GB 2400 MHz DDR4" ;
+    item:Storage        "128 GB eMMC" ;
+    item:GPU            "Intel UHD Graphics" ;
+    item:Harga          "Rp 5.299.000,-" ;
+    item:Type           "Laptop 2 in 1" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Asus" ;
+    item:TahunRilis     "2019" .
+
+id:A010
+    item:NamaProduk     "Zenbook 14 UX435EG-AI511NP" ;
+    item:Processor      "Intel Core i5 1135G7 2.4 GHz Quad Core" ;
+    item:RAM            "8 GB 2400 MHz DDR4" ;
+    item:Storage        "512 GB SSD M.2" ;
+    item:GPU            "NVIDIA GeForce MX450 2 GB" ;
+    item:Harga          "Rp 13.499.000,-" ;
+    item:Type           "Laptop Gaming" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Asus" ;
+    item:TahunRilis     "2020" .
+
+id:A011
+    item:NamaProduk     "IdeaPad 330-14AST" ;
+    item:Processor      "AMD A9-9425 3.1 GHz Dual Core" ;
+    item:RAM            "4 GB DDR4" ;
+    item:Storage        "1 TB HDD" ;
+    item:GPU            "AMD Radeon R5 Series" ;
+    item:Harga          "Rp 4.999.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "DOS" ;
+    item:Brand          "Lenovo" ;
+    item:TahunRilis     "2019" .
+    
+id:A012
+    item:NamaProduk     "ROG GL552VW-DM136T" ;
+    item:Processor      "Intel Core i7-6700HQ 2.6 GHz Quad Core" ;
+    item:RAM            "16 GB 2133 MHz DDR4" ;
+    item:Storage        "1 TB HDD" ;
+    item:GPU            "NVIDIA GTX 960M 2 GB" ;
+    item:Harga          "Rp 10.300.000,-" ;
+    item:Type           "Laptop Gaming" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Asus" ;
+    item:TahunRilis     "2015" .
+
+id:A013
+    item:NamaProduk     "MyBook 14" ;
+    item:Processor      "Intel Celeron N3350 1.1 GHz Dual Core" ;
+    item:RAM            "8 GB DDR3L" ;
+    item:Storage        "HDD 500 GB" ;
+    item:GPU            "Intel HD Graphics" ;
+    item:Harga          "Rp 4.200.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Axioo" ;
+    item:TahunRilis     "2014" .
+
+id:A014
+    item:NamaProduk     "ZenBook Pro Duo 15 UX582LR-OLED911" ;
+    item:Processor      "Intel Core i9-10980HK 2.4 GHz" ;
+    item:RAM            "32 GB DDR4" ;
+    item:Storage        "1TB SSD" ;
+    item:GPU            "NVIDIA GeForce MX350 8 GB" ;
+    item:Harga          "Rp 41.999.000,-" ;
+    item:Type           "Laptop 2 in 1" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Asus" ;
+    item:TahunRilis     "2021" .
+    
+id:A015
+    item:NamaProduk     "Nitro 5 AN515-43-R1BL" ;
+    item:Processor      "AMD Ryzen 5 3550H 2.1 GHz Quad Core" ;
+    item:RAM            "8 GB 2400 MHz DDR4" ;
+    item:Storage        "512 GB SSD" ;
+    item:GPU            "AMD Radeon RX 560X 4 GB" ;
+    item:Harga          "Rp 11.499.000,-" ;
+    item:Type           "Laptop Gaming" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Acer" ;
+    item:TahunRilis     "2019" .
+
+id:A016
+    item:NamaProduk     "Aspire 3 Slim A314-22-R6JU" ;
+    item:Processor      "AMD Athlon" ;
+    item:RAM            "4 GB DDR4" ;
+    item:Storage        "512 GB SSD" ;
+    item:GPU            "AMD RadeonTM Graphics" ;
+    item:Harga          "Rp 5.199.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Acer" ;
+    item:TahunRilis     "2020" .
+
+id:A017
+    item:NamaProduk     "Aspire 3 A314-41-42R5" ;
+    item:Processor      "AMD A4-9120e 2.2 GHz Dual Core" ;
+    item:RAM            "4 GB 2133 MHz DDR4" ;
+    item:Storage        "1 TB SSD" ;
+    item:GPU            "AMD Radeon R3 Graphics" ;
+    item:Harga          "Rp 4.950.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "Acer" ;
+    item:TahunRilis     "2018" .
+    
+id:A018
+    item:NamaProduk     "Pavilion X360 Convertible 14-DY0063TU" ;
+    item:Processor      "Intel Core i5 1135G7 2.4 GHz Quad Core" ;
+    item:RAM            "8 GB 3200 MHz DDR4" ;
+    item:Storage        "512 GB SSD M.2" ;
+    item:GPU            "Intel Iris Xe Graphics" ;
+    item:Harga          "Rp 12.199.000,-" ;
+    item:Type           "Laptop 2 in 1" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "HP" ;
+    item:TahunRilis     "2021" .
+id:A019
+    item:NamaProduk     "14s-dk1514au" ;
+    item:Processor      "AMD Ryzen 3 3250U 2.6 GHz Dual Core" ;
+    item:RAM            "8 GB 2400 MHz DDR4" ;
+    item:Storage        "512 GB SSD M.2" ;
+    item:GPU            "AMD Radeon Graphics" ;
+    item:Harga          "Rp 6.499.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "Windows 10" ;
+    item:Brand          "HP" ;
+    item:TahunRilis     "2020" .
+    
+id:A020
+    item:NamaProduk     "Latitude E7250" ;
+    item:Processor      "Intel Core i7-5600U 3.2 GHz Dual Core" ;
+    item:RAM            "8 GB 1600 MHz DDR3L" ;
+    item:Storage        "256 GB SSD" ;
+    item:GPU            "Intel Graphics" ;
+    item:Harga          "Rp 4.499.000,-" ;
+    item:Type           "Notebook" ;
+    item:OS             "Windows 8" ;
+    item:Brand          "Dell" ;
+    item:TahunRilis     "2014" .
