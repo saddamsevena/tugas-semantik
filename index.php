@@ -17,9 +17,11 @@
     <!-- Connector untuk menghubungkan PHP dan SPARQL -->
     <?php
         require_once("sparqllib.php");
-        $test = "";
+        $searchInput = "" ;
+        $filter = "" ;
+        
         if (isset($_POST['search'])) {
-            $test = $_POST['search'];
+            $searchInput = $_POST['search'];
             $data = sparql_get(
             "http://localhost:3030/lapbook",
             "
@@ -42,16 +44,16 @@
                         item:Brand          ?Brand ;
                         item:TahunRilis     ?TahunRilis .
                         FILTER 
-                        (regex (?NamaProduk, '$test', 'i') 
-                        || regex (?Processor, '$test', 'i') 
-                        || regex (?RAM, '$test', 'i') 
-                        || regex (?Storage, '$test', 'i') 
-                        || regex (?GPU, '$test', 'i') 
-                        || regex (?Harga, '$test', 'i') 
-                        || regex (?Type, '$test', 'i') 
-                        || regex (?OS, '$test', 'i') 
-                        || regex (?Brand, '$test', 'i') 
-                        || regex (?TahunRilis, '$test', 'i'))
+                        (regex (?NamaProduk, '$searchInput', 'i') 
+                        || regex (?Processor, '$searchInput', 'i') 
+                        || regex (?RAM, '$searchInput', 'i') 
+                        || regex (?Storage, '$searchInput', 'i') 
+                        || regex (?GPU, '$searchInput', 'i') 
+                        || regex (?Harga, '$searchInput', 'i') 
+                        || regex (?Type, '$searchInput', 'i') 
+                        || regex (?OS, '$searchInput', 'i') 
+                        || regex (?Brand, '$searchInput', 'i') 
+                        || regex (?TahunRilis, '$searchInput', 'i'))
                 }
             "
             );
@@ -86,9 +88,9 @@
             print "<p>Error: " . sparql_errno() . ": " . sparql_error() . "</p>";
         }
     ?>
-
+    
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-dark">
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top">
         <div class="container container-fluid">
             <a class="navbar-brand" href="index.php"><img src="src/img/logo-nobg.png" style="width:50px" alt="Logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,7 +105,7 @@
                         <a class="nav-link text-white" href="about.php">About</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search" action="" method="post" id="nameform">
+                <form class="d-flex" role="search" action="" method="post" id="search" name="search">
                     <input class="form-control me-2" type="search" placeholder="Ketik keyword disini" aria-label="Search" name="search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
@@ -111,14 +113,17 @@
         </div>
     </nav>
 
-    <div class="container container-fluid mt-3">
+    <!-- Body -->
+    <div class="container container-fluid my-3">
         <?php
-            if ($test != NULL) {
-                ?> <i class="fa-solid fa-magnifying-glass"></i><span>Menampilkan hasil pencarian untuk <b>"<?php echo $test; ?>"</b></span><?php
-            } 
+            if ($searchInput != NULL) {
+                ?> 
+                    <i class="fa-solid fa-magnifying-glass"></i><span>Menampilkan hasil pencarian untuk <b>"<?php echo $searchInput; ?>"</b></span> 
+                <?php
+            }
         ?>
-        <table class="table table-bordered table-striped table-hover text-center table-responsive">
-            <thead class="table-dark">
+        <table class="table table-bordered table-hover text-center table-responsive">
+            <thead class="table-dark align-middle">
                 <tr>
                     <th>No.</th>
                     <th>Nama Produk</th>
@@ -133,20 +138,20 @@
                     <th>Harga</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="align-middle">
                 <?php $i = 0; ?>
-                <?php foreach ($data as $dat) : ?>
+                <?php foreach ($data as $data) : ?>
                     <td><?= ++$i ?></td>
-                    <td><?= $dat['NamaProduk'] ?></td>
-                    <td><?= $dat['Type'] ?></td>
-                    <td><?= $dat['Brand'] ?></td>
-                    <td><?= $dat['TahunRilis'] ?></td>
-                    <td><?= $dat['Processor'] ?></td>
-                    <td><?= $dat['RAM'] ?></td>
-                    <td><?= $dat['Storage'] ?></td>
-                    <td><?= $dat['GPU'] ?></td>
-                    <td><?= $dat['OS'] ?></td>
-                    <td><?= $dat['Harga'] ?></td>
+                    <td><?= $data['NamaProduk'] ?></td>
+                    <td><?= $data['Type'] ?></td>
+                    <td><?= $data['Brand'] ?></td>
+                    <td><?= $data['TahunRilis'] ?></td>
+                    <td><?= $data['Processor'] ?></td>
+                    <td><?= $data['RAM'] ?></td>
+                    <td><?= $data['Storage'] ?></td>
+                    <td><?= $data['GPU'] ?></td>
+                    <td><?= $data['OS'] ?></td>
+                    <td><?= $data['Harga'] ?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -154,8 +159,20 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer text-light text-center bg-dark pb-1">
-        <p>Copyright &copy; All rights reserved -<img src="src/img/logo-nobg.png" style="width:75px" alt="Logo"></p>
-    </footer>
+    <?php
+        if ($searchInput != NULL) {
+            ?> 
+                <footer class="footer text-light text-center bg-dark pb-1 fixed-bottom">
+                    <p>Copyright &copy; All rights reserved -<img src="src/img/logo-nobg.png" style="width:75px" alt="Logo"></p>
+                </footer>
+            <?php
+        } else {
+            ?>
+                <footer class="footer text-light text-center bg-dark pb-1">
+                    <p>Copyright &copy; All rights reserved -<img src="src/img/logo-nobg.png" style="width:75px" alt="Logo"></p>
+                </footer>
+            <?php
+        }
+    ?>
 </body>
 </html>
