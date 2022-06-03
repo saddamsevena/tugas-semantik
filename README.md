@@ -2,6 +2,7 @@
 
 ## About Projects
 
+The application created is based on a website which the author then named it Lapbook. Lapbook itself is a website that contains information about Laptops of various types, brands, and others. On the website, there is also the application of web semantics in the form of a search engine using SPARQL so that each input given will display results that match the inputted.
 
 
 ### Built With
